@@ -1,6 +1,3 @@
-require 'simplecov'
-SimpleCov.start 'rails'
-
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -36,20 +33,23 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
-
   config.before(type: :system) do
     driven_by(:rack_test)
   end
-
+  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Warden::Test::Helpers
   config.include ActionView::RecordIdentifier
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.use_transactional_fixtures = true
+  config.include Rails.application.routes.url_helpers
+  config.include Capybara::DSL
+  config.include I18n
+  config.fixture_path = Rails.root.join('spec/fixtures')
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
+  config.use_transactional_fixtures = true
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
@@ -66,7 +66,7 @@ RSpec.configure do |config|
   #     end
   #
   # The different available types are documented in the features, such as in
-  # https://rspec.info/features/6-0/rspec-rails
+  # https://rspec.info/features/7-0/rspec-rails
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.
