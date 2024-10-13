@@ -1,0 +1,19 @@
+pt:
+  activerecord:
+    models:
+      submissions:
+        one: Submissão de adoção
+        other: Submissões de adoção
+  attributes:
+    submissions:
+      name: Nome
+      contact: Contato
+      animals_id: Animal
+      message: Mensagem
+      status:
+        new: Novo
+        in_analysis: Fase de análise
+        interview: Fase de entrevista
+        rejected: Rejeitado
+        selected: Selecionado
+        finished: Finalizado

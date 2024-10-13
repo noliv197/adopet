@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    models:
+      animal:
+        one: Animal
+        other: Animals
+      animal_type:
+        one: Category
+        other: Categories
+    attributes:
+        animal_type:
+          name: Name
+          icon: Icon
+        animal:
+          name: Name
+          age: Age
+          age_unit: Unit
+          vaccines_id:
+            one: Vaccine
+            onther: Vaccines
+          animal_types_id: Category
+          about: About
+          size: Size
+          medication:
+            one: Medication
+            other: Medications
+          status: 
+            adopeted: Adopted
+            available: Available for adoption
+            in_treatment: In treatment

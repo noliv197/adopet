@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      vaccines:
+        one: Vaccine
+        other: Vaccines
+  attributes:
+    vaccines:
+      name: Name
+      current_dose: Current Dose
+      total_dose: Total of doses

@@ -1,0 +1,10 @@
+pt:
+  activerecord:
+    models:
+      sponsors:
+        one: Patrocinador
+        other: Patrocinadores
+  attributes:
+    sponsors:
+      name: Nome
+      url: Link

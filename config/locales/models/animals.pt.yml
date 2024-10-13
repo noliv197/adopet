@@ -1,0 +1,30 @@
+pt:
+  activerecord:
+    models:
+      animal:
+        one: Animal
+        other: Animais
+      animal_type: 
+        one: Categoria
+        other: Categorias
+    attributes:
+        animal_type:
+          name: Nome
+          icon: Ícone
+        animal:
+          name: Nome
+          age: Idade
+          age_unit: 
+          vaccines_id: 
+            one: Vacina
+            onther: Vacinas
+          animal_types_id: Categoria
+          about: Sobre
+          size: Porte
+          medication: 
+            one: Medicamento
+            other: Medicamentos
+          status: 
+            adopeted: Adotado
+            available: Disponivel para adoção
+            in_treatment: Em tratamento

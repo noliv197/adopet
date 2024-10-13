@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      sponsors:
+        one: Sponsor
+        other: Sponsors
+  attributes:
+    sponsors:
+      name: Name
+      url: Link

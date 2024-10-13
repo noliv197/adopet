@@ -1,0 +1,12 @@
+pt:
+  activerecord:
+    models:
+      socials: Redes Sociais
+      social_types: Tipo de Rede
+  attributes:
+    socials:
+      social_types_id: Tipo de Rede
+      url: Link
+    social_types:
+      name: Nome
+      icon: Ícone
