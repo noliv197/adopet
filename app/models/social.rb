@@ -1,3 +1,3 @@
 class Social < ApplicationRecord
-  belongs_to :type
+  belongs_to :social_type
 end

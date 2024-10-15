@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :sponsor do
-    name { "MyString" }
-    url { "MyString" }
+    name { "Test" }
+    about { "Test" }
+    url { "/" }
   end
 end
