@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :social_type do
-    name { "MyString" }
-    icon { "MyString" }
+    name { "Default" }
+    icon { "test" }
   end
 end
