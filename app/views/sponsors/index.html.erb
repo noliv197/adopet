@@ -1,0 +1,24 @@
+<section>
+    <% if @sponsors.empty? %>
+        <h2><%=t('sponsors.index.no_partners')%></h2>
+    <% else %>
+        <h2><%=t('sponsors.index.main')%></h2>
+        <div class="card-group">
+        <% @sponsors.each do |sponsor|%>
+            <div class="card" style="width: 18rem;">
+                <%if sponsor.image.present? %>
+                    <%= image_tag sponsor.image, alt: t('sponsors.image.alt', name: sponsor.name), class: 'card-img-top' %>
+                <% else %>
+                    <%= render partial: 'layouts/icons/sponsor'%>
+                <% end %>
+                <div class="card-body">
+                    <h5 class="card-title"><%= sponsor.name%></h5>
+                    <p class="card-text"><%=sponsor.about%></p>
+                    <%= link_to t('sponsors.index.link'),  href: sponsor.url, target: "_blank" %>
+                </div>
+            </div>
+        <% end %>
+        </div>
+        <p><%=t('sponsors.index.join_partners')%></p>
+    <% end %>
+</section>
