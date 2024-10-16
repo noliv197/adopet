@@ -3,7 +3,7 @@ class CreateSponsors < ActiveRecord::Migration[7.0]
     create_table :sponsors do |t|
       t.string :name
       t.string :about
-      t.string :url, null: false
+      t.string :url, null: true
 
       t.timestamps
     end

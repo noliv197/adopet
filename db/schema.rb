@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_12_070704) do
 
   create_table "animal_types", force: :cascade do |t|
     t.string "name"
-    t.string "icon", null: false
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,16 +50,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_12_070704) do
     t.string "name"
     t.integer "age"
     t.integer "age_unit"
-    t.integer "animal_types_id", null: false
+    t.integer "animal_type_id", null: false
     t.integer "status"
     t.integer "size"
     t.string "about"
-    t.integer "vaccines_id", null: false
+    t.integer "vaccine_id", null: false
     t.string "medication"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["animal_types_id"], name: "index_animals_on_animal_types_id"
-    t.index ["vaccines_id"], name: "index_animals_on_vaccines_id"
+    t.index ["animal_type_id"], name: "index_animals_on_animal_type_id"
+    t.index ["vaccine_id"], name: "index_animals_on_vaccine_id"
   end
 
   create_table "social_types", force: :cascade do |t|
@@ -70,18 +70,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_12_070704) do
   end
 
   create_table "socials", force: :cascade do |t|
-    t.integer "social_types_id", null: false
+    t.integer "social_type_id", null: false
     t.string "user"
-    t.string "url", null: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["social_types_id"], name: "index_socials_on_social_types_id"
+    t.index ["social_type_id"], name: "index_socials_on_social_type_id"
   end
 
   create_table "sponsors", force: :cascade do |t|
     t.string "name"
     t.string "about"
-    t.string "url", null: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,12 +89,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_12_070704) do
   create_table "submissions", force: :cascade do |t|
     t.string "name"
     t.string "contact"
-    t.integer "animals_id", null: false
+    t.integer "animal_id", null: false
     t.string "message"
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["animals_id"], name: "index_submissions_on_animals_id"
+    t.index ["animal_id"], name: "index_submissions_on_animal_id"
   end
 
   create_table "vaccines", force: :cascade do |t|
@@ -107,8 +107,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_12_070704) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "animals", "animal_types", column: "animal_types_id"
-  add_foreign_key "animals", "vaccines", column: "vaccines_id"
-  add_foreign_key "socials", "social_types", column: "social_types_id"
-  add_foreign_key "submissions", "animals", column: "animals_id"
+  add_foreign_key "animals", "animal_types"
+  add_foreign_key "animals", "vaccines"
+  add_foreign_key "socials", "social_types"
+  add_foreign_key "submissions", "animals"
 end
