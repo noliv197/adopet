@@ -10,3 +10,11 @@ pt-BR:
     social_types:
       name: Nome
       icon: Ícone
+  socials:
+    errors:
+      no_type: Adicione uma opção de rede social
+      no_user: Adicione o nome de usuário da sua conta
+  social_types:
+    errors:
+      no_name: Adicione nome da rede social
+      no_icon: Adicione o ico da rede social

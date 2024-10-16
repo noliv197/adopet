@@ -7,4 +7,7 @@ en:
   attributes:
     sponsors:
       name: Name
+      about: About
       url: Link
+      image:
+        alt: '%{name} Logo'

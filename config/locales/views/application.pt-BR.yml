@@ -1,7 +1,9 @@
 pt-BR:
   nav:
-    home: adopet
+    home: Home
     about: Sobre
     adopt: Adote
     sponsors: Patrocinadores
     support: Apoie
+  footer:
+    develop: Desenvolvido por

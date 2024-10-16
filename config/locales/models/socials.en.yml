@@ -10,3 +10,11 @@ en:
     social_types:
       name: Name
       icon: Icon
+  socials:
+    errors:
+      no_type: Add a social media option
+      no_user: Add user name from your account
+  social_types:
+    errors:
+      no_name: Add social network name
+      no_icon: Add icon to social network
