@@ -1,0 +1,21 @@
+<footer class="bkg-green text-center text-dark fw-bold p-4">
+    <% if @socials.any? %>    
+        <ul class="d-flex flex-wrap gap-3 justify-content-center">
+            <% @socials.each do |social| %>
+                <li class="social-container d-flex flex-column gap-2">
+                    <% if lookup_context.exists?("layouts/icons/#{social.social_type.icon}", [], true) %>
+                        <%= render partial: "layouts/icons/#{social.social_type.icon}"%>
+                    <% else %>
+                        <%= render partial: 'layouts/icons/default' %>
+                    <% end %>
+                    <% if social.url.present? %>
+                        <%= link_to social.user,  social.url, {target: "_blank", class: "text-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"} %>
+                    <% else %>
+                        <span><%= social.user %></span>
+                    <% end %>
+                </li> 
+            <% end %>
+        </ul>
+    <% end %>    
+    <p class="m-0"><%=t('footer.develop')%> Natalia Oliveira</p>
+</footer>

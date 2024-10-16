@@ -13,10 +13,12 @@ gem 'faraday'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'puma', '~> 5.0'
+gem 'bootstrap', '~> 5.1.3'
 gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'importmap-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -54,7 +56,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem 'simplecov', require: false
-  # gem "selenium-webdriver"
-  # gem "webdrivers"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
